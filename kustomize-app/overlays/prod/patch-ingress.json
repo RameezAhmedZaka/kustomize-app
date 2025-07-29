@@ -1,0 +1,17 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/rules/0/host",
+    "value": "prod.hello.local"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/rules/0/http/paths/0/path",
+    "value": "/prod-a"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/rules/0/http/paths/1/path",
+    "value": "/prod-b"
+  }
+]

@@ -1,0 +1,21 @@
+resources:
+  - ../../base
+
+namePrefix: prod-
+
+namespace: prod-ns
+
+patches:
+  - path: patch-deployment.json
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: kustomize-flask-app-deploy
+
+  - path: patch-ingress.json
+    target:
+      group: networking.k8s.io
+      version: v1
+      kind: Ingress
+      name: kustomize-flask-ingress

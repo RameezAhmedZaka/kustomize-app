@@ -1,0 +1,9 @@
+resources:
+  - ../../base
+
+namePrefix: dev-
+
+namespace: dev-ns
+
+patchesStrategicMerge:
+  - deployment-replica-patch.yaml

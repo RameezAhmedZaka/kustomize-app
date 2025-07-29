@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kustomize-flask-app-deploy
+  labels:
+    app: kustomize-flask-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kustomize-flask-app
+  template:
+    metadata:
+      labels:
+        app: kustomize-flask-app
+    spec:
+      nodeSelector:
+        node-type: hello-node
+      containers:
+        - name: flask-container
+          image: rameezdocker69/kustomize-flask-app
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
